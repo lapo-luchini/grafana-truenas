@@ -1,4 +1,40 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_VICTORIAMETRICS",
+      "label": "VictoriaMetrics",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.3.4"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -16,8 +52,8 @@
   "editable": true,
   "gnetId": 1826,
   "graphTooltip": 0,
-  "id": 44,
-  "iteration": 1617308409464,
+  "id": null,
+  "iteration": 1617308409465,
   "links": [],
   "panels": [
     {
@@ -30,7 +66,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Quicknum, Load 1min",
       "fieldConfig": {
         "defaults": {
@@ -121,7 +157,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "decimals": 2,
       "description": "System uptime as an easily readable number",
       "fieldConfig": {
@@ -150,10 +186,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:1279",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:1280",
           "name": "range to text",
           "value": 2
         }
@@ -228,6 +266,7 @@
       "valueFontSize": "80%",
       "valueMaps": [
         {
+          "$$hashKey": "object:1282",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -245,7 +284,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Quicknum, Load 1min",
       "fieldConfig": {
         "defaults": {
@@ -329,7 +368,7 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "${DS_VICTORIAMETRICS}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -346,7 +385,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "1, 5 and 15 minute average load. Basically number of processes that have wanted to run per second with some averaging and decay to show load history.",
       "fieldConfig": {
         "defaults": {
@@ -445,7 +484,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "CPU temperatures in Celsius",
       "fieldConfig": {
         "defaults": {
@@ -545,7 +584,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "ARC is ZFS in-memory cache, hit ratio should be between 90-100%. If not, you may need more memory.",
       "fieldConfig": {
         "defaults": {
@@ -644,7 +683,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Time between reboots",
       "fieldConfig": {
         "defaults": {
@@ -743,7 +782,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "CPU Usage per CPU. Max is 100% or 100% times number of CPUs depending on FreeNAS setting System -> Advanced -> Report CPU usage in percentage. If your number is >100,  set that flag in FreeNAS.",
       "fieldConfig": {
         "defaults": {
@@ -842,7 +881,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "CPU Usage across all CPUs. Max is 100% or 100% times number of CPUs(?) depending on FreeNAS setting System -> Advanced -> Report CPU usage in percentage. If your number is >100,  set that flag in FreeNAS.",
       "fieldConfig": {
         "defaults": {
@@ -947,6 +986,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1336",
           "format": "percent",
           "label": null,
           "logBase": 1,
@@ -955,6 +995,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1337",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -973,7 +1014,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Number of processes",
       "fieldConfig": {
         "defaults": {
@@ -1046,6 +1087,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1446",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1054,6 +1096,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1447",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1072,7 +1115,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Swap on system",
       "fieldConfig": {
         "defaults": {
@@ -1187,6 +1230,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1391",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -1195,6 +1239,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1392",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1213,7 +1258,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Wired memory is kernel usage and will be very high because ZFS runs in kernel space and its cache etc is included in this number.  Default ZFS usage is 80% of total mem, configurable but leave it.",
       "fieldConfig": {
         "defaults": {
@@ -1309,7 +1354,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Number of network packets",
       "fieldConfig": {
         "defaults": {
@@ -1444,7 +1489,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Network R/W bytes per second",
       "fieldConfig": {
         "defaults": {
@@ -1579,7 +1624,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Network R/W Errors. Should not happen.",
       "fieldConfig": {
         "defaults": {
@@ -1711,7 +1756,7 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "${DS_VICTORIAMETRICS}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1728,7 +1773,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "How much of the time does the disk have a request active or pending",
       "fieldConfig": {
         "defaults": {
@@ -1827,7 +1872,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Unsure what this is exactly since there is a RWD metric on the same.",
       "fieldConfig": {
         "defaults": {
@@ -1958,7 +2003,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Unsure what this exactly",
       "fieldConfig": {
         "defaults": {
@@ -2086,7 +2131,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Unsure what BW means here,  potentially bandwidth i.e. number of Bytes/s",
       "fieldConfig": {
         "defaults": {
@@ -2214,7 +2259,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "How long does the disk time to fulful a request",
       "fieldConfig": {
         "defaults": {
@@ -2342,7 +2387,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "How many disk requests are there in the queue",
       "fieldConfig": {
         "defaults": {
@@ -2470,7 +2515,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Disk temperatures. Not all disks/controllers will report this.",
       "fieldConfig": {
         "defaults": {
@@ -2598,7 +2643,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Available memory on all filesystems",
       "fieldConfig": {
         "defaults": {
@@ -2694,7 +2739,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "Lists free, reserved and used space on available filesystems",
       "fieldConfig": {
         "defaults": {
@@ -2819,7 +2864,7 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "${DS_VICTORIAMETRICS}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2836,7 +2881,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "CTL - CAM Target Layer stuff",
       "fieldConfig": {
         "defaults": {
@@ -2964,7 +3009,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "CTL - CAM Target Layer stuff",
       "fieldConfig": {
         "defaults": {
@@ -3092,7 +3137,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "All the ZFS ARC (in-memory ZFS cache) in one place",
       "fieldConfig": {
         "defaults": {
@@ -3220,7 +3265,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "VictoriaMetrics",
+      "datasource": "${DS_VICTORIAMETRICS}",
       "description": "All the ZFS ARC v2 measurements in one place.  Unsure if this is newer or complimentary to the ZFS ARC measurements.",
       "fieldConfig": {
         "defaults": {
@@ -3348,22 +3393,15 @@
   "schemaVersion": 26,
   "style": "dark",
   "tags": [
-    "OK"
+    "FreeNAS",
+    "TrueNAS"
   ],
   "templating": {
     "list": [
       {
         "allValue": "*",
-        "current": {
-          "selected": false,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "datasource": "VictoriaMetrics",
+        "current": {},
+        "datasource": "${DS_VICTORIAMETRICS}",
         "definition": "{__graphite__=\"servers.*.aggregation-cpu-average.cpu-idle\"}",
         "error": null,
         "hide": 0,
@@ -3385,16 +3423,8 @@
       },
       {
         "allValue": "*",
-        "current": {
-          "selected": false,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "datasource": "VictoriaMetrics",
+        "current": {},
+        "datasource": "${DS_VICTORIAMETRICS}",
         "definition": "{__graphite__=\"servers.*.interface-*.if_octets.tx\"}",
         "error": null,
         "hide": 0,
@@ -3416,16 +3446,8 @@
       },
       {
         "allValue": "*",
-        "current": {
-          "selected": false,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "datasource": "VictoriaMetrics",
+        "current": {},
+        "datasource": "${DS_VICTORIAMETRICS}",
         "definition": "{__graphite__=\"servers.*.cpu-*.cpu-idle\"}",
         "error": null,
         "hide": 0,
@@ -3447,16 +3469,8 @@
       },
       {
         "allValue": "*",
-        "current": {
-          "selected": false,
-          "text": [
-            "ada2"
-          ],
-          "value": [
-            "ada2"
-          ]
-        },
-        "datasource": "VictoriaMetrics",
+        "current": {},
+        "datasource": "${DS_VICTORIAMETRICS}",
         "definition": "{__graphite__=\"servers.*.disk-*.disk_octets.read\"}",
         "error": null,
         "hide": 0,
@@ -3478,16 +3492,8 @@
       },
       {
         "allValue": "*",
-        "current": {
-          "selected": false,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "datasource": "VictoriaMetrics",
+        "current": {},
+        "datasource": "${DS_VICTORIAMETRICS}",
         "definition": "{__graphite__=\"servers.*.df-*.df_complex-used\"}",
         "error": null,
         "hide": 0,
@@ -3541,5 +3547,5 @@
   "timezone": "browser",
   "title": "TrueNAS 12 (VictoriaMetrics data source)",
   "uid": "lapo-truenas",
-  "version": 7
+  "version": 8
 }
