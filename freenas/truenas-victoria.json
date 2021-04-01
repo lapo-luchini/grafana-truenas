@@ -17,7 +17,7 @@
   "gnetId": 1826,
   "graphTooltip": 0,
   "id": 44,
-  "iteration": 1617304536406,
+  "iteration": 1617308409464,
   "links": [],
   "panels": [
     {
@@ -196,6 +196,7 @@
               "type": "fill"
             }
           ],
+          "instant": true,
           "interval": "",
           "legendFormat": "",
           "orderByTime": "ASC",
@@ -886,6 +887,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.aggregation-cpu-average.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]aggregation-cpu-average[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -900,6 +902,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1014,6 +1018,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.processes.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]processes[.]ps_state-([^.]+)\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refId": "A",
           "target": "aliasByNode(servers.$server.processes.*,1,3)",
           "textEditor": true
@@ -1110,6 +1117,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.swap.swap-used\"}, \"legend\", \"$1\", \"__name__\", \"servers[.]([^.]+).*\")",
           "groupBy": [
             {
               "params": [
@@ -1124,6 +1132,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refCount": 0,
@@ -1148,6 +1158,9 @@
           "textEditor": true
         },
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.swap.swap-free\"}, \"legend\", \"$1\", \"__name__\", \"servers[.]([^.]+).*\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refCount": 0,
           "refId": "B",
           "target": "servers.$server.swap.swap-free",
@@ -3343,8 +3356,12 @@
         "allValue": "*",
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "VictoriaMetrics",
         "definition": "{__graphite__=\"servers.*.aggregation-cpu-average.cpu-idle\"}",
@@ -3370,8 +3387,12 @@
         "allValue": "*",
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "VictoriaMetrics",
         "definition": "{__graphite__=\"servers.*.interface-*.if_octets.tx\"}",
@@ -3396,8 +3417,7 @@
       {
         "allValue": "*",
         "current": {
-          "selected": true,
-          "tags": [],
+          "selected": false,
           "text": [
             "All"
           ],
@@ -3428,8 +3448,7 @@
       {
         "allValue": "*",
         "current": {
-          "selected": true,
-          "tags": [],
+          "selected": false,
           "text": [
             "ada2"
           ],
@@ -3461,8 +3480,12 @@
         "allValue": "*",
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "VictoriaMetrics",
         "definition": "{__graphite__=\"servers.*.df-*.df_complex-used\"}",
@@ -3518,5 +3541,5 @@
   "timezone": "browser",
   "title": "TrueNAS 12 (VictoriaMetrics data source)",
   "uid": "lapo-truenas",
-  "version": 3
+  "version": 7
 }
