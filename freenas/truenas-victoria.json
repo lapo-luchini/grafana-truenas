@@ -53,7 +53,7 @@
   "gnetId": 1826,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1617310158778,
+  "iteration": 1617352565432,
   "links": [],
   "panels": [
     {
@@ -289,7 +289,7 @@
         },
         "overrides": []
       },
-      "format": "none",
+      "format": "percent",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -526,7 +526,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "label_replace({__graphite__=\"servers.$server.cputemp-$cpu.temperature\"}, \"legend\", \"$1.cpu$2\", \"__name__\", \"servers[.]([^.]+)[.]cputemp-([0-9]+).temperature\")",
+          "expr": "label_replace({__graphite__=\"servers.$server.cputemp-$cpu.temperature\"}, \"legend\", \"$1.cpu$2\", \"__name__\", \"servers[.]([^.]+)[.]cputemp-([0-9]+).temperature\")/10-273.15",
           "interval": "",
           "legendFormat": "{{legend}}",
           "refId": "A",
@@ -3592,5 +3592,5 @@
   "timezone": "browser",
   "title": "TrueNAS 12 (VictoriaMetrics data source)",
   "uid": "lapo-truenas",
-  "version": 11
+  "version": 14
 }
