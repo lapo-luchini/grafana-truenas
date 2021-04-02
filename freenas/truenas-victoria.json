@@ -53,7 +53,7 @@
   "gnetId": 1826,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1617308409465,
+  "iteration": 1617310158778,
   "links": [],
   "panels": [
     {
@@ -186,12 +186,10 @@
       "mappingType": 1,
       "mappingTypes": [
         {
-          "$$hashKey": "object:1279",
           "name": "value to text",
           "value": 1
         },
         {
-          "$$hashKey": "object:1280",
           "name": "range to text",
           "value": 2
         }
@@ -266,7 +264,6 @@
       "valueFontSize": "80%",
       "valueMaps": [
         {
-          "$$hashKey": "object:1282",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -430,9 +427,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "label_replace({__graphite__=\"servers.$server.load.*.*\"}, \"label\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]load[.]load[.]([^.]+)\")",
+          "expr": "label_replace({__graphite__=\"servers.$server.load.*.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]load[.]load[.]([^.]+)\")",
           "interval": "",
-          "legendFormat": "{{label}}",
+          "legendFormat": "{{legend}}",
           "refId": "A",
           "target": "aliasByNode(servers.$server.load.*.*, 1,4)",
           "textEditor": true
@@ -986,7 +983,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1336",
           "format": "percent",
           "label": null,
           "logBase": 1,
@@ -995,7 +991,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1337",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1087,7 +1082,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1446",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1096,7 +1090,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1447",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1230,7 +1223,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1391",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -1239,7 +1231,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1392",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1303,6 +1294,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.memory.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]memory[.]memory-([^.]+)\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refId": "A",
           "target": "aliasByNode(servers.$server.memory.*,1,3)",
           "textEditor": true
@@ -1399,6 +1393,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_packets.tx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_packets[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -1413,6 +1408,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refCount": 0,
@@ -1437,6 +1434,9 @@
           "textEditor": true
         },
         {
+          "expr": "-label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_packets.rx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_packets[.]([^.]+)\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refCount": 0,
           "refId": "B",
           "target": "scale(aliasByNode(servers.$server.interface-$network_interface.if_packets.rx,1,2,4),-1)",
@@ -1534,6 +1534,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_octets.tx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_octets[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -1548,6 +1549,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refCount": 0,
@@ -1572,6 +1575,9 @@
           "textEditor": true
         },
         {
+          "expr": "-label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_octets.rx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_octets[.]([^.]+)\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refCount": 0,
           "refId": "B",
           "target": "scale(aliasByNode(servers.$server.interface-$network_interface.if_octets.rx,1,2,4),-1)",
@@ -1669,6 +1675,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_errors.tx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_errors[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -1683,6 +1690,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refCount": 0,
@@ -1707,6 +1716,9 @@
           "textEditor": true
         },
         {
+          "expr": "-label_replace({__graphite__=\"servers.$server.interface-$network_interface.if_errors.rx\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]interface-([^.]+)[.]if_errors[.]([^.]+)\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refCount": 0,
           "refId": "B",
           "target": "scale(aliasByNode(servers.$server.interface-$network_interface.if_errors.*,1,2,4),-1)",
@@ -2048,6 +2060,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.geom_stat.geom_ops_rwd-$disk.*\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]geom_stat[.]geom_ops_rwd-([^.]+)[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -2062,6 +2075,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2176,6 +2191,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.geom_stat.geom_bw-$disk.*\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]geom_stat[.]geom_bw-([^.]+)[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -2190,6 +2206,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2304,6 +2322,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.geom_stat.geom_latency-$disk.*\"}, \"legend\", \"$1.$2.$3\", \"__name__\", \"servers[.]([^.]+)[.]geom_stat[.]geom_latency-([^.]+)[.]([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -2318,6 +2337,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2432,6 +2453,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.geom_stat.geom_queue-$disk\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]geom_stat[.]geom_queue-([^.]+)\")",
           "groupBy": [
             {
               "params": [
@@ -2446,6 +2468,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2560,6 +2584,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.disktemp-$disk.temperature\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]disktemp-([^.]+).temperature\")",
           "groupBy": [
             {
               "params": [
@@ -2574,6 +2599,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2688,6 +2715,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.df-$mount.df_complex-free\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]df-([^.]+)[.]df_complex-free\")",
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "refId": "A",
           "target": "aliasByNode(servers.$server.df-$mount.df_complex-free,1,2)",
           "textEditor": true
@@ -2784,6 +2814,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.df-$mount.df_complex-used\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]df-([^.]+)[.]df_complex-used\")",
           "groupBy": [
             {
               "params": [
@@ -2798,6 +2829,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2926,6 +2959,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.ctl-ioctl.*.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]ctl-ioctl[.](.+)\")",
           "groupBy": [
             {
               "params": [
@@ -2940,6 +2974,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3054,6 +3090,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.ctl-tpc.*.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]ctl-tpc[.](.+)\")",
           "groupBy": [
             {
               "params": [
@@ -3068,6 +3105,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3182,6 +3221,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.zfs_arc.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]zfs_arc[.](.+)\")",
           "groupBy": [
             {
               "params": [
@@ -3196,6 +3236,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3252,7 +3294,7 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -3310,6 +3352,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "expr": "label_replace({__graphite__=\"servers.$server.zfs_arc_v2.*\"}, \"legend\", \"$1.$2\", \"__name__\", \"servers[.]([^.]+)[.]zfs_arc_v2[.](.+)\")",
           "groupBy": [
             {
               "params": [
@@ -3324,6 +3367,8 @@
               "type": "fill"
             }
           ],
+          "interval": "",
+          "legendFormat": "{{legend}}",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3354,7 +3399,7 @@
       "title": "ZFS ARC v2 complete",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -3380,7 +3425,7 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -3547,5 +3592,5 @@
   "timezone": "browser",
   "title": "TrueNAS 12 (VictoriaMetrics data source)",
   "uid": "lapo-truenas",
-  "version": 8
+  "version": 11
 }
