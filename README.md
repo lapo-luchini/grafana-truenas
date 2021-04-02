@@ -1,8 +1,8 @@
-# grafana-dashboards
-Some dashboards for Grafana
+# Grafana TrueNAS dashboard
 
-## freenas11-graphite
-A Grafana dashboard for FreeNAS 11 metrics using a Graphite backend.
+A Grafana dashboard for FreeNAS / TrueNAS 12 metrics using a VictoriaMetrics (Prometheus) backend.
+
+This is a direct conversion of <a href="https://github.com/okolbu/grafana-dashboards">okolbu's dashboard</a> (which uses a Graphite datasource).
 
 <p align="center">
   <img src="freenas/dashboard.png" width="70%">
